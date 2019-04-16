@@ -11,19 +11,14 @@ class parse():
 		base_url = "http://webprod.hc-sc.gc.ca/nhpid-bdipsn/{}Req.do?id={}&lang=eng"
 		if datatype == "ingredient":
 			self.URL = base_url.format("ingred", "{}")
-#			self.datatype = "ing"
 		elif datatype == "subingredient":
 			self.URL = base_url.format("singred", "{}")
-#			self.datatype = "sing"
 		elif datatype == "parent_organism":
 			self.URL = base_url.format("orgp", "{}")
-#			self.datatype = "orgp"
 		elif datatype == "organism":
 			self.URL = base_url.format("org", "{}")
-#			self.datatype = "org"
 		elif datatype == "syn":
 			self.URL = base_url.format("syn", "{}")
-#			self.datatype = "syn"
 	
 	def _getClass(self, element):
 		if "leftLabel" in element:
