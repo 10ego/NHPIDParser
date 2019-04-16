@@ -63,14 +63,11 @@ class parse():
 			if i[0] == "Label":
 				key = i[1][0][:-1]
 				if lastkey != key:
-					output[key] = ""
+					output[key] = []
 				lasttype = "Label"
 				lastkey = key
 			else:
-				if output[lastkey] != "":
-					output[lastkey] += self.cleanValue(i[1]) 
-				else:
-					output[lastkey] = self.cleanValue(i[1])
+				output[lastkey] += self.cleanValue(i[1])
 		return output
 		
 	def fetch(self, id):
